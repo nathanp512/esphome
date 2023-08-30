@@ -263,6 +263,21 @@ static const uint8_t PROGMEM INITCMD_S3BOXLITE[] = {
   0x00                                   // End of list
 };
 
+static const uint8_t PROGMEM INITCMD_WS35PICO[] = {
+  ILI9XXX_SWRESET,   0x80,               // Soft reset, then delay 150 ms
+  ILI9XXX_MADCTL, 1, 0x88,               // Memory Access
+  ILI9XXX_PIXFMT, 1, 0x55,
+  ILI9XXX_IFMODE, 1, 0x00,
+  ILI9XXX_DFUNCTR, 3,
+    0x00,
+    0x00,
+    0x00,
+  ILI9XXX_ETMOD, 1, 0xC6,                // Entry Mode
+  ILI9XXX_SLPOUT, 0x80,                  // Exit Sleep, then delay 150 ms
+  ILI9XXX_DISPON, 0x80,                  // Main screen turn on, delay 150 ms
+  0x00                                   // End of list
+};
+
 // clang-format on
 }  // namespace ili9xxx
 }  // namespace esphome
