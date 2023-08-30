@@ -154,5 +154,11 @@ class ILI9XXXS3BoxLite : public ILI9XXXDisplay {
   void initialize() override;
 };
 
+//-----------   Waveshare Pico-ResTouch-LCD-3.5 display --------------
+class ILI9XXXWS35PICO : public ILI9XXXDisplay {
+ protected:
+  void initialize() override;
+};
+
 }  // namespace ili9xxx
 }  // namespace esphome
