@@ -453,5 +453,17 @@ void ILI9XXXS3BoxLite::initialize() {
   this->invert_display_(true);
 }
 
+//    35_TFT display Waveshare Pico-ResTouch-LCD-3.5
+void ILI9XXXWS35PICO::initialize() {
+  this->init_lcd_(INITCMD_WS35PICO);
+  if (this->width_ == 0) {
+    this->width_ = 320;
+  }
+  if (this->height_ == 0) {
+    this->height_ = 480;
+  }
+  this->invert_display_(true);
+}
+
 }  // namespace ili9xxx
 }  // namespace esphome
